@@ -12,7 +12,9 @@ export class HomePage {
 
   data = { type:'', nickname:'', message:'' };
   chats = [];
+  room = [];
   roomkey:string;
+  roomname:string;
   nickname:string;
   offStatus:boolean = false;
 
