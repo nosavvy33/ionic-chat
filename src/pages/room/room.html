@@ -23,9 +23,13 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let room of rooms">
-      {{room.roomname}}
-      <ion-icon name="chatboxes" item-end (click)="joinRoom(room.key, room.roomname)"></ion-icon>
-    </ion-item>
+    <ion-item-sliding *ngFor="let room of rooms">
+      <ion-item ion-item (click)="joinRoom(room.key)">
+          {{room.roomname}}
+      </ion-item>
+      <ion-item-options>
+          <button ion-button color="danger" (click)="delete(room)">Excluir</button>
+        </ion-item-options>
+      </ion-item-sliding>
   </ion-list>
 </ion-content>

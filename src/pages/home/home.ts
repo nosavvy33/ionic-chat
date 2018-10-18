@@ -12,9 +12,8 @@ export class HomePage {
 
   data = { type:'', nickname:'', message:'' };
   chats = [];
-  room = [];
+  roomname = "";
   roomkey:string;
-  roomname:string;
   nickname:string;
   offStatus:boolean = false;
 
@@ -34,6 +33,13 @@ export class HomePage {
     });
     this.data.message = '';
   
+    firebase.database().ref('chatrooms/'+this.roomkey).on('value', resp => {
+      this.roomname = "";
+      resp.forEach(childSnapshot => {
+        this.roomname = childSnapshot.val();        
+      });
+    });
+
     firebase.database().ref('chatrooms/'+this.roomkey+'/chats').on('value', resp => {
       this.chats = [];
       this.chats = snapshotToArray(resp);

@@ -42,6 +42,10 @@ export class RoomPage {
       nickname:this.navParams.get("nickname")
     });
   }
+
+  delete(room) {
+    firebase.database().ref('chatrooms/'+room.key).remove();
+  }
 }
 
 export const snapshotToArray = snapshot => {
