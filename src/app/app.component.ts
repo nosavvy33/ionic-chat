@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import * as firebase from 'firebase'
 
 // import { HomePage } from '../pages/home/home';
-// import { SigninPage } from '../pages/signin/signin';
+import { SigninPage } from '../pages/signin/signin';
 import { ContasPage } from '../pages/contas/contas';
 
 const config = {
@@ -23,7 +23,12 @@ const config = {
 export class MyApp {
   rootPage:any = ContasPage;
 
+  public chat;
+  public contas;
+
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+    this.chat = SigninPage;
+    this.contas = ContasPage;
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -31,6 +36,10 @@ export class MyApp {
       splashScreen.hide();
     });
     firebase.initializeApp(config);
+  }
+
+  openPage(opcao) {
+    this.rootPage = opcao;
   }
 }
 
