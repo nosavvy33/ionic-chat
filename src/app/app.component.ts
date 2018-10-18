@@ -5,7 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import * as firebase from 'firebase'
 
 // import { HomePage } from '../pages/home/home';
-import { SigninPage } from '../pages/signin/signin';
+// import { SigninPage } from '../pages/signin/signin';
+import { ContasPage } from '../pages/contas/contas';
 
 const config = {
   apiKey: "AIzaSyAt_4sGgAs4BP2AH5e_FqI9Yxxu6jTR4-s",
@@ -20,7 +21,7 @@ const config = {
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = SigninPage;
+  rootPage:any = ContasPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
