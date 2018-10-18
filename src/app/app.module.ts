@@ -10,6 +10,8 @@ import { HomePage } from '../pages/home/home';
 import { SigninPageModule } from '../pages/signin/signin.module';
 import { RoomPageModule } from '../pages/room/room.module';
 import { AddRoomPageModule } from '../pages/add-room/add-room.module';
+import { ContasPageModule } from '../pages/contas/contas.module';
+import { ContasAddPageModule } from '../pages/contas-add/contas-add.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { AddRoomPageModule } from '../pages/add-room/add-room.module';
     IonicModule.forRoot(MyApp),
     SigninPageModule,
     RoomPageModule,
-    AddRoomPageModule
+    AddRoomPageModule,
+    ContasPageModule,
+    ContasAddPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
