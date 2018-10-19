@@ -12,6 +12,7 @@ import { RoomPageModule } from '../pages/room/room.module';
 import { AddRoomPageModule } from '../pages/add-room/add-room.module';
 import { ContasPageModule } from '../pages/contas/contas.module';
 import { ContasAddPageModule } from '../pages/contas-add/contas-add.module';
+import { LoginPageModule } from '../pages/login/login.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ContasAddPageModule } from '../pages/contas-add/contas-add.module';
     RoomPageModule,
     AddRoomPageModule,
     ContasPageModule,
-    ContasAddPageModule
+    ContasAddPageModule,
+    LoginPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
