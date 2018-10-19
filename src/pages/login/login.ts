@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { SigninPage } from '../signin/signin';
+import { AuthService } from '../../providers/auth/auth';
 
 /**
  * Generated class for the LoginPage page.
@@ -17,16 +18,14 @@ import { SigninPage } from '../signin/signin';
 })
 export class LoginPage {
 
-  public email;
-  public password;
   public credencial = {
+    displayName:"",
     email:"",
     password:""
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.email = "";
-    this.password = "";
+  constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AuthService) {
+
   }
 
   ionViewDidLoad() {
@@ -34,11 +33,12 @@ export class LoginPage {
   }
 
   login() {
-    console.log(this.credencial);
-		// this.auth.signInWithEmail(credentials)
-		// 	.then(
-		// 		() => this.navCtrl.setRoot(HomePage),
-		// 		error => this.loginError = error.message
-		// 	);
+    this.auth.doRegister(this.credencial)
+    .then(res => {
+      console.log(res);
+      this.navCtrl.setRoot(SigninPage);
+    }, err => {
+      console.log(err);
+    });
 	}
 }

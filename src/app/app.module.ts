@@ -13,6 +13,10 @@ import { AddRoomPageModule } from '../pages/add-room/add-room.module';
 import { ContasPageModule } from '../pages/contas/contas.module';
 import { ContasAddPageModule } from '../pages/contas-add/contas-add.module';
 import { LoginPageModule } from '../pages/login/login.module';
+import { AuthService } from '../providers/auth/auth';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environment/environment';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,9 @@ import { LoginPageModule } from '../pages/login/login.module';
     AddRoomPageModule,
     ContasPageModule,
     ContasAddPageModule,
-    LoginPageModule
+    LoginPageModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,7 +43,8 @@ import { LoginPageModule } from '../pages/login/login.module';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthService
   ]
 })
 export class AppModule {}
