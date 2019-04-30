@@ -33,7 +33,7 @@ export class LoginPage {
   }
 
   login() {
-    this.auth.doRegister(this.credencial)
+    this.auth.doLogin(this.credencial)
     .then(res => {
       console.log(res);
       this.navCtrl.setRoot(SigninPage);
