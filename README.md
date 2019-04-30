@@ -1,4 +1,9 @@
-# chat-ionic3-firebase
-chat with Ionic 3+ and Google Firebase
+# IMPORTANT
 
-Chat Application Mobile using Ionic 4 with Google Firebase.
+instalar ionic 3
+- npm install -g ionic
+
+modificar solo los archivos html dentro de app/pages
+
+correr la aplicacion con
+- ionic serve
