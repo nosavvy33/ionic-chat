@@ -19,7 +19,7 @@ import { AuthService } from '../../providers/auth/auth';
 export class LoginPage {
 
   public credencial = {
-    displayName:"",
+    displayName:"unnecesary",
     email:"",
     password:""
   };
@@ -33,7 +33,7 @@ export class LoginPage {
   }
 
   login() {
-    this.auth.doRegister(this.credencial)
+    this.auth.doLogin(this.credencial)
     .then(res => {
       console.log(res);
       this.navCtrl.setRoot(SigninPage);

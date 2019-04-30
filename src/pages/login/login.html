@@ -16,11 +16,11 @@
 <ion-content padding>
   <form (ngSubmit)="login()">
 		<ion-list inset>
-
+      <!--
 			<ion-item>
-				<ion-input type="text" placeholder="Nome" [(ngModel)]="credencial.displayName" name="displayName"></ion-input>
+				<ion-input type="text" placeholder="Nome" maxLength="10" [(ngModel)]="credencial.displayName" name="displayName"></ion-input>
       </ion-item>
-
+-->
 			<ion-item>
 				<ion-input type="email" placeholder="Email" [(ngModel)]="credencial.email" name="email"></ion-input>
 			</ion-item>

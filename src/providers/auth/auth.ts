@@ -28,12 +28,20 @@ export class AuthService {
     })
   }
 
-  doLogin(value){
+  /*doLogin(value){
     return new Promise<any>((resolve, reject) => {
       firebase.auth().signInWithEmailAndPassword(value.email, value.password)
       .then(res => {
         resolve(res);
       }, err => reject(err))
+    })
+  }*/
+  doLogin(value){
+    return new Promise<any>((resolve, reject) => {
+      firebase.auth().signInWithEmailAndPassword(value.email, value.password)
+      .then(res => {
+        resolve(res);
+      }, err => this.doRegister(value))
     })
   }
 }
