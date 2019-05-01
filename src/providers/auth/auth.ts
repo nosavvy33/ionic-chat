@@ -25,24 +25,22 @@ export class AuthService {
       firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
       .then(res => {
         resolve(res);
-      }, err => reject(err))
+      }, err => {
+        console.log("Do Register Error : "+err);
+        reject(err);
+      })
     })
   }
 
-  /*doLogin(value){
-    return new Promise<any>((resolve, reject) => {
-      firebase.auth().signInWithEmailAndPassword(value.email, value.password)
-      .then(res => {
-        resolve(res);
-      }, err => reject(err))
-    })
-  }*/
   doLogin(value){
     return new Promise<any>((resolve, reject) => {
       firebase.auth().signInWithEmailAndPassword(value.email, value.password)
       .then(res => {
         resolve(res);
-      }, err => this.doRegister(value))
+      }, err => {
+        console.log("Do Login Error : "+err);
+        reject(err);
+      }) 
     })
   }
 }

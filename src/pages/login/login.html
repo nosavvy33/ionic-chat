@@ -1,51 +1,28 @@
-<!--
-  Generated template for the LoginPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-
-    
-
-
-
-
 <ion-content padding>
-
-
- 
-
   <form (ngSubmit)="login() ">
-
- 
-
 		<ion-list inset>
      <ion-grid style=" align-items: center;">
-  <ion-row>
-    <ion-col >
-  <ion-img src="../assets/imgs/tecsup.jpg" style=" width: 500px; height: 180px;align-items: center;"></ion-img>
+  <ion-row style="width: 100vw;">
+    <ion-col style="align-content: center;">
+  <ion-img src="../assets/imgs/logo-tecsup.png" style="width: 100%; height: 200px; align-items: center;"></ion-img>
     </ion-col>
   </ion-row></ion-grid>
-			<ion-item style=" margin-bottom: 20px;">
-				<ion-input type="text" placeholder="Nombre" [(ngModel)]="credencial.displayName" name="displayName"></ion-input>
-      </ion-item>
-
 			<ion-item  style=" margin-bottom: 20px;">
 				<ion-input type="email" placeholder="Correo" [(ngModel)]="credencial.email" name="email"></ion-input>
 			</ion-item>
-
 			<ion-item  style=" margin-bottom: 20px;">
 				<ion-input type="password" placeholder="Contraseñas" [(ngModel)]="credencial.password" name="password"></ion-input>
-			</ion-item>
-
+      </ion-item>
+      <ion-item style="color: red;">
+        {{mensaje}}
+      </ion-item>
     </ion-list>
-    
     <div padding-horizontal>
-
       <button ion-button full type="submit">Iniciar Sesión</button>
+      <br>
     </div>
-	</form>
-
-
-
+  </form>
+  <div padding-horizontal>
+    <button ion-button full (click)="register()" style="background-color: green">Registrarse</button>
+  </div>
 </ion-content>

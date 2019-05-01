@@ -19,10 +19,11 @@ import { AuthService } from '../../providers/auth/auth';
 export class LoginPage {
 
   public credencial = {
-    displayName:"",
     email:"",
     password:""
   };
+
+  mensaje: string = "";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AuthService) {
 
@@ -38,7 +39,17 @@ export class LoginPage {
       console.log(res);
       this.navCtrl.setRoot(SigninPage);
     }, err => {
+      this.mensaje = err.message;
+    });
+  }
+  
+  register(){
+    this.auth.doRegister(this.credencial)
+    .then(res => {
+      console.log(res);
+      this.login();
+    }, err => {
       console.log(err);
     });
-	}
+  }
 }
